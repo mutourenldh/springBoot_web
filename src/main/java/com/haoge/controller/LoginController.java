@@ -15,14 +15,14 @@ public class LoginController {
 	
 	@PostMapping(value="/user/login")
 	public String login(@RequestParam("username") String username
-			,@RequestParam("password")String password,HttpSession session) {
-		HashMap<String, Object> map = new HashMap<String,Object>();
+			,@RequestParam("password")String password,HttpSession session,HashMap<String, Object> map) {
 		if (!StringUtils.isEmpty("username")&&password.equals("123456")) {//登录成功
 			session.setAttribute("loginUser", username);
-			return "redirect:main.html";//登录成功，重定向到main.html
+			return "redirect:/main.html";//登录成功，重定向到main.html
 			
 		}else {
 			map.put("msg", "账号或者密码错误！");
+			
 			return "login";
 		}
 	}
