@@ -30,7 +30,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
 			public void addInterceptors(InterceptorRegistry registry) {
 				// TODO Auto-generated method stub
 				registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-				.excludePathPatterns("/index.html","/","/user/login");
+				.excludePathPatterns("/index.html","/","/user/login","/myServlet");
 			}
 		};
 		return adapter;
